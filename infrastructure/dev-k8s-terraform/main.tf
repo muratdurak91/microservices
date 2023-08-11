@@ -137,7 +137,7 @@ resource "aws_instance" "kube-master" {
     instance_type = "t3.medium"
     iam_instance_profile = module.iam.master_profile_name
     vpc_security_group_ids = [aws_security_group.matt-kube-master-sg.id, aws_security_group.matt-kube-mutual-sg.id]
-    key_name = "Stockholm-key"
+    key_name = "mrt-ansible-test-dev.key"
     subnet_id = "subnet-01539ab56d53abb1c"  # select own subnet_id of eu-north-1b
     availability_zone = "eu-north-1b"
     tags = {
@@ -155,7 +155,7 @@ resource "aws_instance" "worker-1" {
     instance_type = "t3.medium"
         iam_instance_profile = module.iam.worker_profile_name
     vpc_security_group_ids = [aws_security_group.matt-kube-worker-sg.id, aws_security_group.matt-kube-mutual-sg.id]
-    key_name = "mattkey"
+    key_name = "mrt-ansible-test-dev.key"
     subnet_id = "subnet-01539ab56d53abb1c"  # select own subnet_id of eu-north-1b
     availability_zone = "eu-north-1b"
     tags = {
@@ -173,7 +173,7 @@ resource "aws_instance" "worker-2" {
     instance_type = "t3.medium"
     iam_instance_profile = module.iam.worker_profile_name
     vpc_security_group_ids = [aws_security_group.matt-kube-worker-sg.id, aws_security_group.matt-kube-mutual-sg.id]
-    key_name = "mattkey"
+    key_name = "mrt-ansible-test-dev.key"
     subnet_id = "subnet-01539ab56d53abb1c"  # select own subnet_id of eu-north-1b
     availability_zone = "eu-north-1b"
     tags = {
